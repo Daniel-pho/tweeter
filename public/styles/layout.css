@@ -15,10 +15,29 @@ html {
  */
 
 body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans 3', sans-serif;
+  justify-content: center;
+  align-items: center;
 }
+main {
+  display: flex;
+  width: 90%;
+  align-items: center;
+ 
+}
+
+nav span {
+  font-family: 'Bungee', sans-serif;
+  
+}
+
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

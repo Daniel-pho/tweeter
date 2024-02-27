@@ -1,0 +1,40 @@
+nav {
+  background-color: #4056A1;
+  height: 120px;
+  padding: 0 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+nav span {
+  display: block;
+  color: #FFFFFF;
+  font-family: 'Bungee', sans-serif;
+  width: 100%;
+  height: 100%;
+  line-height: 120px;
+}
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap
+}
+
+.new-tweet p {
+  color: #FFFFFF;
+  margin-bottom: 5px;;
+  flex-direction: row-reverse;
+
+}
+
+.new-tweet i {
+  color: #bd352b;
+  font-size: 24px;
+}
+
