@@ -29,7 +29,8 @@ main {
   display: flex;
   width: 90%;
   align-items: center;
- 
+  margin: 0 auto;
+  background-color: inherit;
 }
 
 nav span {

@@ -1,0 +1,39 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+}
+form {
+  display: flex;
+  width: inherit;
+  
+  flex-direction: column;
+}
+button {
+  background-color: #4056A1;
+  font-family: 'Bungee', sans-serif;
+  color: white;
+}
+
+label {
+  display: flex;
+  width: 20%;
+}
+textarea {
+  display: flex;
+  width: 100%;
+  background-color: inherit;
+  justify-content: center;
+  border: none;
+  border-bottom: solid black;
+  
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
