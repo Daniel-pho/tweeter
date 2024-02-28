@@ -23,12 +23,14 @@ label {
   width: 20%;
 }
 textarea {
+  height: 35px;
   display: flex;
   width: 100%;
   background-color: inherit;
   justify-content: center;
   border: none;
   border-bottom: solid black;
+  resize: none;
   
 }
 
