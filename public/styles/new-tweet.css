@@ -33,9 +33,20 @@ textarea {
   resize: none;
   
 }
+ .error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  background-color: #ffe6e6; 
+  color: #cc0000; 
+  border: 1px solid #cc0000; 
+}
 
 div {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
 }
+

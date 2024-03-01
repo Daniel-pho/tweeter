@@ -15,6 +15,7 @@ const createTweetElement = function (tweetObject) {
     let $tweet = $(`
     <section class="tweet-container">
     <link rel="stylesheet" href="/styles/tweet.css"/>
+    <article class="tweet-box">
     <header class="tweet-author">
       <img src="${tweetObject.user.avatars}">
       <p>${tweetObject.user.name}</p>
@@ -31,6 +32,7 @@ const createTweetElement = function (tweetObject) {
         <i class="fa-solid fa-heart"></i>
         </p>
     </footer>
+    </article>
   </section>
     `);
     return $tweet;
@@ -49,13 +51,20 @@ $("form").submit(function(event) {
   event.preventDefault()
 
   const $form = $(this);
-  const tweet = $form.find("textarea[name=text]").val();
+  const tweet = $form.find("textarea[name=text]").val().trim();
   if (!tweet) {
-    return alert ("You can't post about nothing!");
+    $(".error-message").text("❗❗You can't post about nothing❗❗").slideDown();
+    return;
   }
   if (tweet.length > 140) {
-    return alert("Tweet has exceeded maximum character limit!");
+    $(".error-message").text("❗❗Exceeded character limit of 140❗❗").slideDown();
+    return;
   }
+
+
+  const escape = $("<div>").text(tweet).html();
+  $form.find("textarea[name=text]").val(escape);
+
   const data = $(this).serialize();
   
   
@@ -66,6 +75,7 @@ $("form").submit(function(event) {
   })
     .then(function(response) {
       $("form").trigger("reset");
+      $("counter").text(140);
       loadTweets();
       
     })
@@ -76,7 +86,6 @@ $("form").submit(function(event) {
     $.ajax({
       url: "/tweets",
       method: "GET",
-      data: "Json"
     })
       .then(function(response) {
         renderTweets(response);

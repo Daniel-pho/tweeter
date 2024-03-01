@@ -65,6 +65,9 @@
   <section class="new-tweet">
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
     <h2>Compose Tweet</h2>
+    <!--Error message line-->
+    <div class="error-message" style="display: none;"></div>
+    <!--error section end-->
     <form action="/tweets" method="Post">
       <label for="tweet-text">What are you humming about?</label>
       <textarea name="text" id="tweet-text"></textarea>
@@ -76,6 +79,7 @@
   </section>
   <section class="tweet-container">
     <link rel="stylesheet" href="/styles/tweet.css"/>
+    <article class="tweet-box">
     <header class="tweet-author">
       <img src="/images/profile-hex.png">
       <p>Your Name</p>
@@ -93,6 +97,7 @@
         </p>
       
     </footer>
+    </article>
   </section>
 </main>
 </body>

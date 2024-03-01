@@ -1,15 +1,23 @@
-.tweet-container {
+ .tweet-container {
+  justify-content: center;
   width: 100%;
-  border: 6px solid black;
-
-  padding-top: 30px;
- 
+  margin: 30px auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
+ 
+  /* border: 6px solid black; */
 
 }
-
-.tweet-container:hover {
+.tweet-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 400PX;
+  border: 6px solid black;
+}
+.tweet-box:hover {
   transition: 150ms;
   box-shadow: 10px 5px 5px darkslategrey;
 }
@@ -31,7 +39,7 @@ header.tweet-author img {
   margin-top: 0;
   
 }
-
+ 
 .tweet-container header {
   height: 100px;
 }
