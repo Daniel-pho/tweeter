@@ -37,46 +37,62 @@ const createTweetElement = function (tweetObject) {
 };
 
 const renderTweets = function(tweets) {
-  $(".tweet-container").empty();
+  $tweetContainer.empty();
 
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
    $tweetContainer.prepend($tweet);
   }
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 };
 
 $("form").submit(function(event) {
   event.preventDefault()
-  console.log("hello from event")
+
+  const $form = $(this);
+  const tweet = $form.find("textarea[name=text]").val();
+  if (!tweet) {
+    return alert ("You can't post about nothing!");
+  }
+  if (tweet.length > 140) {
+    return alert("Tweet has exceeded maximum character limit!");
+  }
   const data = $(this).serialize();
+  
   
   $.ajax({
     url: "/tweets",
     method: "POST",
-    data: data,
-    success: function(response) {
-      renderTweets(response)
-    }
+    data: data
   })
+    .then(function(response) {
+      $("form").trigger("reset");
+      loadTweets();
+      
+    })
+    
+  })
+
+  const loadTweets = function() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      data: "Json"
+    })
+      .then(function(response) {
+        renderTweets(response);
+      })
+  }
+  loadTweets()
+
+
+
 
 })
 
 
 
-const loadTweets = function() {
-  $.ajax({
-    url: "/tweets",
-    method: "GET",
-    data: "Json",
-    success: function(response) {
-      renderTweets(response);
-    }
-  })
-}
-loadTweets()
 
 
-});
+
+
 
