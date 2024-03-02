@@ -1,14 +1,20 @@
+@media only screen and (min-width: 1024px) {
 section.new-tweet {
+  
+  /* margin-top: 300px; */
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
   flex-direction: column;
-
+ 
+  
+}
 }
 form {
   display: flex;
-  width: 90%;
+  width: 100%;
   
   flex-direction: column;
 }
@@ -50,3 +56,17 @@ div {
   padding-top: 20px;
 }
 
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  section.new-tweet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+  
+  }
+
+
+}

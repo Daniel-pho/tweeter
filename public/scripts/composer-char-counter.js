@@ -1,7 +1,7 @@
 console.log("Composer character counter script loaded successfully.");
 
 $(document).ready(function() {
-  $('.new-tweet textarea').on('keyup', function() {
+  $('.new-tweet textarea').on('input', function() {
     
     const text = $(this).val();
     const counter = $(this).closest(".new-tweet").find(".counter");

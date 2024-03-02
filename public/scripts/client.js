@@ -60,7 +60,7 @@ $("form").submit(function(event) {
     $(".error-message").text("❗❗Exceeded character limit of 140❗❗").slideDown();
     return;
   }
-
+  $(".error-message").slideUp();
 
   const escape = $("<div>").text(tweet).html();
   $form.find("textarea[name=text]").val(escape);
