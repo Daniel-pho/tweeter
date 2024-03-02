@@ -3,15 +3,10 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function() {
+$(document).ready(function () {
   const $tweetContainer = $(".tweet-container");
-  
 
-
-
-
-
-const createTweetElement = function (tweetObject) {
+  const createTweetElement = function (tweetObject) {
     let $tweet = $(`
     <section class="tweet-container">
     <link rel="stylesheet" href="/styles/tweet.css"/>
@@ -36,72 +31,59 @@ const createTweetElement = function (tweetObject) {
   </section>
     `);
     return $tweet;
-};
+  };
 
-const renderTweets = function(tweets) {
-  $tweetContainer.empty();
+  const renderTweets = function (tweets) {
+    $tweetContainer.empty();
 
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-   $tweetContainer.prepend($tweet);
-  }
-};
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $tweetContainer.prepend($tweet);
+    }
+  };
 
-$("form").submit(function(event) {
-  event.preventDefault()
+  $("form").submit(function (event) {
+    event.preventDefault();
 
-  const $form = $(this);
-  const tweet = $form.find("textarea[name=text]").val().trim();
-  if (!tweet) {
-    $(".error-message").text("❗❗You can't post about nothing❗❗").slideDown();
-    return;
-  }
-  if (tweet.length > 140) {
-    $(".error-message").text("❗❗Exceeded character limit of 140❗❗").slideDown();
-    return;
-  }
-  $(".error-message").slideUp();
+    const $form = $(this);
+    const tweet = $form.find("textarea[name=text]").val().trim();
+    if (!tweet) {
+      $(".error-message")
+        .text("❗❗You can't post about nothing❗❗")
+        .slideDown();
+      return;
+    }
+    if (tweet.length > 140) {
+      $(".error-message")
+        .text("❗❗Exceeded character limit of 140❗❗")
+        .slideDown();
+      return;
+    }
+    $(".error-message").slideUp();
 
-  const escape = $("<div>").text(tweet).html();
-  $form.find("textarea[name=text]").val(escape);
+    const escape = $("<div>").text(tweet).html();
+    $form.find("textarea[name=text]").val(escape);
 
-  const data = $(this).serialize();
-  
-  
-  $.ajax({
-    url: "/tweets",
-    method: "POST",
-    data: data
-  })
-    .then(function(response) {
+    const data = $(this).serialize();
+
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: data,
+    }).then(function (response) {
       $("form").trigger("reset");
       $("counter").text(140);
       loadTweets();
-      
-    })
-    
-  })
+    });
+  });
 
-  const loadTweets = function() {
+  const loadTweets = function () {
     $.ajax({
       url: "/tweets",
       method: "GET",
-    })
-      .then(function(response) {
-        renderTweets(response);
-      })
-  }
-  loadTweets()
-
-
-
-
-})
-
-
-
-
-
-
-
-
+    }).then(function (response) {
+      renderTweets(response);
+    });
+  };
+  loadTweets();
+});

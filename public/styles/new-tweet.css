@@ -1,26 +1,23 @@
 @media only screen and (min-width: 1024px) {
-section.new-tweet {
-  
-  /* margin-top: 300px; */
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  flex-direction: column;
- 
-  
-}
+  section.new-tweet {
+    /* margin-top: 300px; */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+  }
 }
 form {
   display: flex;
   width: 100%;
-  
+
   flex-direction: column;
 }
 button {
-  background-color: #4056A1;
-  font-family: 'Bungee', sans-serif;
+  background-color: #4056a1;
+  font-family: "Bungee", sans-serif;
   color: white;
 }
 
@@ -37,17 +34,16 @@ textarea {
   border: none;
   border-bottom: solid black;
   resize: none;
-  
 }
- .error-message {
+.error-message {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 90%;
-  background-color: #ffe6e6; 
-  color: #cc0000; 
-  border: 1px solid #cc0000; 
+  background-color: #ffe6e6;
+  color: #cc0000;
+  border: 1px solid #cc0000;
 }
 
 div {
@@ -56,8 +52,6 @@ div {
   padding-top: 20px;
 }
 
-
-
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   section.new-tweet {
     display: flex;
@@ -65,8 +59,5 @@ div {
     align-items: center;
     width: 100%;
     flex-direction: column;
-  
   }
-
-
 }

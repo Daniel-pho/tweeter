@@ -1,7 +1,5 @@
-
-
 nav {
-  background-color: #4056A1;
+  background-color: #4056a1;
   height: 120px;
   padding: 0 1.5em;
   display: flex;
@@ -14,8 +12,8 @@ nav {
 
 nav span {
   display: block;
-  color: #FFFFFF;
-  font-family: 'Bungee', sans-serif;
+  color: #ffffff;
+  font-family: "Bungee", sans-serif;
   width: 100%;
   height: 100%;
   line-height: 120px;
@@ -25,18 +23,16 @@ nav span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .new-tweet p {
-  color: #FFFFFF;
-  margin-bottom: 5px;;
+  color: #ffffff;
+  margin-bottom: 5px;
   flex-direction: row-reverse;
-
 }
 
 .new-tweet i {
   color: #bd352b;
   font-size: 24px;
 }
-
