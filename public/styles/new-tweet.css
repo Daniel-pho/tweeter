@@ -21,10 +21,15 @@ button {
   color: white;
 }
 
+.redText {
+  color: red;
+}
+
 label {
   display: flex;
   width: 20%;
 }
+
 textarea {
   height: 35px;
   display: flex;
@@ -34,6 +39,7 @@ textarea {
   border: none;
   border-bottom: solid black;
   resize: none;
+  overflow: hidden;
 }
 .error-message {
   display: flex;

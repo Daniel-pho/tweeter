@@ -9,9 +9,9 @@ $(document).ready(function () {
     counter.text(maxChars);
 
     if (maxChars <= 0) {
-      $(counter).css("color", "red");
+      $(counter).addClass("redText");
     } else if (maxChars >= 0) {
-      $(counter).css("color", "");
+      $(counter).removeClass("redText");
     }
   });
 });

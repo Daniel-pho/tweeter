@@ -66,6 +66,8 @@ header.tweet-author img {
   display: flex;
   border-bottom: 4px solid black;
   width: 95%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .user-actions {
   display: flex;
@@ -85,6 +87,7 @@ header.tweet-author img {
 }
 .user-icons i:hover {
   color: rgb(206, 159, 41);
+  cursor: pointer;
 }
 .tweet-container footer {
   margin-left: 60px;
