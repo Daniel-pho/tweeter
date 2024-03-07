@@ -75,6 +75,7 @@ $(document).ready(function () {
       $("counter").text(140);
       loadTweets();
     }).catch(function(err) {
+      console.error("Error:", err)
     });
   });
 
